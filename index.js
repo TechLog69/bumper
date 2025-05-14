@@ -5,7 +5,7 @@ const client = new Client()
 client.on('ready', async () => {
     console.log(`Logged in as ${client.user.tag}!`)
 
-    const channel = await client.channels.fetch("1178465177893617716")
+    const channel = await client.channels.fetch(process.env.BUMP_CHANNEL)
     
     async function bump() {
         await channel.sendSlash('302050872383242240', 'bump')
@@ -25,4 +25,4 @@ client.on('ready', async () => {
     loop()
 })
 
-client.login("MTM3MTkzMjAzNDE0NjIzODU2NA.G1V3oN.LDo2zfaj9JaQq7vWdOMuCuPhyyE69N2hU6Zyy8")
+client.login(process.env.TOKEN)
